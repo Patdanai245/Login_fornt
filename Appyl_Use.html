@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="Appyl.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Raleway", sans-serif;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f2f2f2;
+            /* สีพื้นหลังของหน้าเว็บ */
+        }
+
+        .reg-container {
+            display: flex;
+            justify-content: center;
+            height: 70vh;
+            flex-direction: column;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 70vh;
+            margin-top: 8%;
+        }
+
+        h2 {
+            padding-bottom: 50px;
+            text-align: center;
+            padding-left: 49px;
+        }
+
+        label {
+            padding-left: 7rem;
+            font-weight: bold;
+        }
+
+        input {
+            margin-left: 7rem;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            margin-top: 5px;
+            margin-bottom: 15px;
+            width: 20rem;
+            height: 30px;
+            border-radius: 5px;
+            outline: none;
+            border: 2px solid #050505;
+        }
+
+        input[type="submit"] {
+            border: none;
+            background-color: #3366FF;
+            width: 100px;
+            height: 35px;
+            border-radius: 5px;
+            color: #fff;
+            margin: 0 0 0 225px;
+            margin-top: 12px;
+            cursor: pointer;
+        }
+
+        .reg input[type="text"]:focus,
+        .reg input[type="email"]:focus,
+        .reg input[type="password"]:focus {
+            border-color: #9c2fd7;
+            outline: none;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #33CC33;
+        }
+
+        .modal-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.5);
+            width: 100vw;
+            height: 100vh;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modpop {
+            background: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+            padding: 50px 50px;
+            width: 500px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .modal-container.show {
+            display: flex;
+        }
+
+        button {
+            border: none;
+            background-color: rgb(20, 10, 87);
+            padding: 15px;
+            color: #fff;
+            font-size: 15px;
+            outline: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .fa-solid{
+            position: absolute;
+            top:29.2rem;
+            left: 56rem;
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="reg-container">
+        <h2>สมัครสมาชิก</h2>
+        <form action="#" method="#" onsubmit="showPopup(); return false;">
+            <div class="reg">
+                <label for="username">Username:</label><br>
+                <input type="text" id="username" name="username" required><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br>
+
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password" required><br>
+                <i class="fa-solid fa-eye" id="eye"></i>
+                <input type="submit" value="บันทึก" class="open-btn">
+            </div>
+        </form>
+    </div>
+    <section class="modal-container" id="popup">
+        <div class="modpop">
+            <h1>บันทึกสำเร็จ</h1>
+            <button class="close-btn" onclick="closePopup()">ปิด</button>
+        </div>
+    </section>
+
+</body>
+
+</html>
